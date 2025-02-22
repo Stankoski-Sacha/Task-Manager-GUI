@@ -32,15 +32,18 @@
             monthCalendar1 = new MonthCalendar();
             label1 = new Label();
             dateTimePicker1 = new DateTimePicker();
+            checkedListBox1 = new CheckedListBox();
+            button2 = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(79, 79);
+            button1.Location = new Point(8, 67);
             button1.Name = "button1";
-            button1.Size = new Size(192, 66);
+            button1.Size = new Size(167, 66);
             button1.TabIndex = 0;
-            button1.Text = "test";
+            button1.Text = "Add Task";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -55,9 +58,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(96, 35);
+            label1.Font = new Font("Calibri", 20F, FontStyle.Bold);
+            label1.Location = new Point(25, 19);
             label1.Name = "label1";
-            label1.Size = new Size(149, 15);
+            label1.Size = new Size(317, 33);
             label1.TabIndex = 5;
             label1.Text = "Le Task Manager de la hess";
             label1.Click += label1_Click;
@@ -68,12 +72,44 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(360, 23);
             dateTimePicker1.TabIndex = 6;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(2, 204);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(360, 256);
+            checkedListBox1.TabIndex = 7;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(185, 67);
+            button2.Name = "button2";
+            button2.Size = new Size(167, 66);
+            button2.TabIndex = 8;
+            button2.Text = "Clear Tasks";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(4, 180);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 15);
+            label2.TabIndex = 9;
+            int tasksremaining = checkedListBox1.Items.Count;
+            label2.Text = "Here are the tasks to complete for today ";
+            //
             // TaskManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1285, 686);
+            Controls.Add(label2);
+            Controls.Add(button2);
+            Controls.Add(checkedListBox1);
             Controls.Add(dateTimePicker1);
             Controls.Add(label1);
             Controls.Add(monthCalendar1);
@@ -88,10 +124,12 @@
         }
 
         #endregion
-
         private Button button1;
         private MonthCalendar monthCalendar1;
         private Label label1;
         private DateTimePicker dateTimePicker1;
+        private CheckedListBox checkedListBox1;
+        private Button button2;
+        private Label label2;
     }
 }
