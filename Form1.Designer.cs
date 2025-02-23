@@ -10,7 +10,7 @@
         /// <summary>
         ///  Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name = "disposing" > true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -35,17 +35,18 @@
             checkedListBox1 = new CheckedListBox();
             button2 = new Button();
             label2 = new Label();
+            button3 = new Button();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(8, 67);
+            button1.Location = new Point(2, 67);
             button1.Name = "button1";
-            button1.Size = new Size(167, 66);
+            button1.Size = new Size(116, 66);
             button1.TabIndex = 0;
             button1.Text = "Add Task";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += button1AddTasks;
             // 
             // monthCalendar1
             // 
@@ -84,29 +85,39 @@
             // 
             // button2
             // 
-            button2.Location = new Point(185, 67);
+            button2.Location = new Point(124, 67);
             button2.Name = "button2";
-            button2.Size = new Size(167, 66);
+            button2.Size = new Size(116, 66);
             button2.TabIndex = 8;
             button2.Text = "Clear Tasks";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button2.Click += button2ClearTasks;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(4, 180);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
+            label2.Size = new Size(221, 15);
             label2.TabIndex = 9;
-            int tasksremaining = checkedListBox1.Items.Count;
             label2.Text = "Here are the tasks to complete for today ";
-            //
+            // 
+            // button3
+            // 
+            button3.Location = new Point(246, 67);
+            button3.Name = "button3";
+            button3.Size = new Size(116, 66);
+            button3.TabIndex = 10;
+            button3.Text = "Save/Load Tasks";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3SaveLoad;
+            // 
             // TaskManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1285, 686);
+            ClientSize = new Size(1285, 461);
+            Controls.Add(button3);
             Controls.Add(label2);
             Controls.Add(button2);
             Controls.Add(checkedListBox1);
@@ -131,5 +142,6 @@
         private CheckedListBox checkedListBox1;
         private Button button2;
         private Label label2;
+        private Button button3;
     }
 }
